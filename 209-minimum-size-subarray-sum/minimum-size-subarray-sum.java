@@ -3,11 +3,14 @@ class Solution {
         int left = 0;
         int minlength = Integer.MAX_VALUE;
         int sum = 0;
+        
 
         for (int right = 0; right < nums.length ; right++) {
+            
             sum += nums[right];
             while (sum >= target) {
-                minlength = Math.min (minlength , right-left+1);
+                int cr = right-left+1;
+                minlength = Math.min (minlength , cr);
                 sum -= nums[left];
                 left++;
             }
